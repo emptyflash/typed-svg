@@ -53,6 +53,12 @@ node =
     VirtualDom.nodeNS "http://www.w3.org/2000/svg"
 
 
+keyedNode : String -> List (Attribute msg) -> List ( String, Svg msg ) -> Svg msg
+keyedNode name =
+    \attributes children ->
+        VirtualDom.keyedNode name (svgNamespace :: attributes) children
+
+
 {-| Creates any untyped attribute
 -}
 attribute : String -> String -> Attribute msg
