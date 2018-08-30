@@ -1,9 +1,9 @@
 {
     "type": "package",
-    "name": "elm-community/typed-svg",
+    "name": "emptyflash/typed-svg",
     "summary": "A Typed SVG (Scalable Vector Graphics) builder",
     "license": "BSD-3-Clause",
-    "version": "3.1.1",
+    "version": "1.0.0",
     "exposed-modules": [
         "TypedSvg",
         "TypedSvg.Core",
