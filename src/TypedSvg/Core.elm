@@ -1,6 +1,7 @@
 module TypedSvg.Core exposing
     ( Svg, text, node, map, foreignObject
     , Attribute, attribute, attributeNS, svgNamespace
+    , keyedNode
     )
 
 {-|
