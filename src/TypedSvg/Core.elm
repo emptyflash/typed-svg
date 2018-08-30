@@ -1,7 +1,6 @@
 module TypedSvg.Core exposing
-    ( Svg, text, node, map, foreignObject
+    ( Svg, text, node, map, foreignObject, keyedNode
     , Attribute, attribute, attributeNS, svgNamespace
-    , keyedNode
     )
 
 {-|
@@ -9,7 +8,7 @@ module TypedSvg.Core exposing
 
 # SVG Nodes
 
-@docs Svg, text, node, map, foreignObject
+@docs Svg, text, node, map, foreignObject, keyedNode
 
 
 # SVG Attributes
@@ -54,6 +53,11 @@ node =
     VirtualDom.nodeNS "http://www.w3.org/2000/svg"
 
 
+{-| Works just like `Svg.node`, but you add a unique identifier to each child
+node. You want this when you have a list of nodes that is changing: adding
+nodes, removing nodes, etc. In these cases, the unique identifiers help make
+the DOM modifications more efficient.
+-}
 keyedNode : String -> List (Attribute msg) -> List ( String, Svg msg ) -> Svg msg
 keyedNode name =
     \attributes children ->
